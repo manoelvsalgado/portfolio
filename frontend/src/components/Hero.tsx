@@ -73,7 +73,7 @@ export const Hero = () => {
             flex={1}
           >
             <Image
-              src="/profile.jpg"
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Manoel Salgado"
               boxSize={{ base: '130px', md: '170px' }}
               rounded="full"
