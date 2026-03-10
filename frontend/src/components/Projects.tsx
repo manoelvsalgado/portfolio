@@ -17,12 +17,14 @@ export const Projects = () => {
     <Box as="section" py={20} bg="gray.50" id="projetos">
       <Container maxW="container.xl">
         <Stack spacing={12}>
-          <Heading as="h2" size="xl" textAlign="center">
-            {t('projects.title')}
-          </Heading>
-          <Text fontSize="lg" color="gray.600" textAlign="center" maxW="2xl" mx="auto">
-            {t('projects.intro')}
-          </Text>
+          <Stack spacing={4} textAlign="center" maxW="2xl" mx="auto">
+            <Heading as="h2" size="xl">
+              {t('projects.title')}
+            </Heading>
+            <Text fontSize="lg" color="gray.600">
+              {t('projects.intro')}
+            </Text>
+          </Stack>
 
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
             {projects.map((project) => (

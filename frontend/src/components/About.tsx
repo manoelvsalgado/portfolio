@@ -13,13 +13,15 @@ export const About = () => {
   return (
     <Box as="section" py={20} bg="gray.50" id="sobre">
       <Container maxW="container.xl">
-        <Stack spacing={8}>
-          <Heading as="h2" size="xl" textAlign="center">
-            {t('about.title')}
-          </Heading>
-          <Text fontSize="lg" color="gray.600" textAlign="center" maxW="3xl" mx="auto">
-            {t('about.intro')}
-          </Text>
+        <Stack spacing={12}>
+          <Stack spacing={4} textAlign="center" maxW="3xl" mx="auto">
+            <Heading as="h2" size="xl">
+              {t('about.title')}
+            </Heading>
+            <Text fontSize="lg" color="gray.600">
+              {t('about.intro')}
+            </Text>
+          </Stack>
           
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} pt={8}>
             {highlights.map((item) => (
