@@ -110,7 +110,7 @@ export const resources = {
         ],
       },
       contact: {
-        title: 'Entre em Contato',
+        title: 'Entre em contato',
         intro: 'Estou sempre aberto a novas oportunidades e colaborações. Vamos conversar sobre seu próximo projeto!',
         email: 'Email',
         linkedin: 'LinkedIn',
