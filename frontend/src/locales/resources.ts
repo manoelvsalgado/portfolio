@@ -22,7 +22,7 @@ export const resources = {
         comingSoon: 'em breve',
       },
       about: {
-        title: 'Sobre Mim',
+        title: 'Sobre mim',
         intro:
           'Meu trabalho combina qualidade técnica, experiência prática e visão estratégica para transformar necessidades de negócio em soluções digitais claras, funcionais e escaláveis.',
         highlights: [
