@@ -47,7 +47,7 @@ export const resources = {
               'Graduação e mestrado na área de tecnologia, com especialização em Engenharia de Requisitos e uso estratégico de IA no desenvolvimento.',
           },
           {
-            title: '5. Multidisciplinariedade',
+            title: '5. Multidisciplinaridade',
             description:
               'Formação em Ciência Política e Relações Internacionais, com repertório amplo e interesse por temas diversos que fortalecem visão de produto. Experiência profissional no terceiro setor atuando com parceiros globais.',
           },
