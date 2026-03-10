@@ -56,7 +56,7 @@ export const Hero = () => {
       alignItems="center"
       bgGradient="linear(to-br, blue.500, purple.600)"
       color="white"
-      py={{ base: 16, md: 20 }}
+      py={{ base: 12, md: 14 }}
     >
       <Container maxW="container.xl">
         <Flex

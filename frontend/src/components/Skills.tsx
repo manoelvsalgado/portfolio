@@ -12,9 +12,9 @@ export const Skills = () => {
   const skills = t('skills.groups', { returnObjects: true }) as SkillGroup[];
 
   return (
-    <Box as="section" py={20} id="skills">
+    <Box as="section" py={{ base: 14, md: 16 }} id="skills">
       <Container maxW="container.xl">
-        <Stack spacing={12}>
+        <Stack spacing={10}>
           <Stack spacing={4} textAlign="center" maxW="3xl" mx="auto">
             <Heading as="h2" size="xl">
               {t('skills.title')}

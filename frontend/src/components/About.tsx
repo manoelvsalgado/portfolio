@@ -11,9 +11,9 @@ export const About = () => {
   const highlights = t('about.highlights', { returnObjects: true }) as Highlight[];
 
   return (
-    <Box as="section" py={20} bg="gray.50" id="sobre">
+    <Box as="section" py={{ base: 14, md: 16 }} bg="gray.50" id="sobre">
       <Container maxW="container.xl">
-        <Stack spacing={12}>
+        <Stack spacing={10}>
           <Stack spacing={4} textAlign="center" maxW="3xl" mx="auto">
             <Heading as="h2" size="xl">
               {t('about.title')}

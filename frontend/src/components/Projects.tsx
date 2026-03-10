@@ -14,9 +14,9 @@ export const Projects = () => {
   const projects = t('projects.items', { returnObjects: true }) as Project[];
 
   return (
-    <Box as="section" py={20} bg="gray.50" id="projetos">
+    <Box as="section" py={{ base: 14, md: 16 }} bg="gray.50" id="projetos">
       <Container maxW="container.xl">
-        <Stack spacing={12}>
+        <Stack spacing={10}>
           <Stack spacing={4} textAlign="center" maxW="2xl" mx="auto">
             <Heading as="h2" size="xl">
               {t('projects.title')}

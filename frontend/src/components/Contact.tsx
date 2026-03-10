@@ -87,9 +87,9 @@ export const Contact = () => {
   };
 
   return (
-    <Box as="section" py={20} id="contato">
+    <Box as="section" py={{ base: 14, md: 16 }} id="contato">
       <Container maxW="container.xl">
-        <Stack spacing={12}>
+        <Stack spacing={10}>
           <Stack spacing={4} textAlign="center">
             <Heading as="h2" size="xl">
               {t('contact.title')}
