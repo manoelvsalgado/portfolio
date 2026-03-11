@@ -107,7 +107,7 @@ export const resources = {
             projectLink: 'https://pet-services-azure.vercel.app/',
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
           },
-                   {
+          {
             title: 'Focus Timer',
             description: 'Aplicativo para gerenciar tempo de foco e produtividade. Baseado no método Pomodoro.',
             tags: ['JavaScript', 'HTML', 'CSS'],
