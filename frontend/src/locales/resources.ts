@@ -107,6 +107,13 @@ export const resources = {
             projectLink: 'https://pet-services-azure.vercel.app/',
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
           },
+                    {
+            title: 'RocketMovies',
+            description: 'Aplicação para organizar filmes assistidos por avaliação, notas e tags',
+            tags: ['React', 'Vite', 'styled-components'],
+            projectLink: 'https://manoelvsalgado.github.io/rocketmovies/',
+            githubLink: 'https://github.com/manoelvsalgado/rocketmovies',
+          },
           {
             title: 'Focus Timer',
             description: 'Aplicativo para gerenciar tempo de foco e produtividade. Baseado no método Pomodoro.',
