@@ -107,7 +107,14 @@ export const resources = {
             projectLink: 'https://pet-services-azure.vercel.app/',
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
           },
-                    {
+          {
+            title: 'Weather Web App',
+            description: 'Previsão do tempo, conectada a uma API de clima para fornecer informações meteorológicas em tempo real.',
+            tags: ['React', 'Vite', 'styled-components'],
+            projectLink: 'https://manoelvsalgado.github.io/weather-web-app/',
+            githubLink: 'https://github.com/manoelvsalgado/weather-web-app',
+          },
+          {
             title: 'RocketMovies',
             description: 'Aplicação para organizar filmes assistidos por avaliação, notas e tags',
             tags: ['React', 'Vite', 'styled-components'],
