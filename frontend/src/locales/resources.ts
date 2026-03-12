@@ -108,6 +108,13 @@ export const resources = {
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
           },
           {
+            title: 'Data Salary Analysis  ',
+            description: 'Análise de salários das área de dados.',
+            tags: ['React', 'TypeScript', 'Vite'],
+            projectLink: 'https://manoelvsalgado.github.io/data-salary-analysis/',
+            githubLink: 'https://github.com/manoelvsalgado/data-salary-analysis',
+          },
+          {
             title: 'Weather Web App',
             description: 'Previsão do tempo, conectada a uma API de clima para fornecer informações meteorológicas em tempo real.',
             tags: ['React', 'TypeScript', 'Chakra UI'],
