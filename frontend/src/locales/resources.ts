@@ -103,7 +103,7 @@ export const resources = {
                     {
             title: 'Avalia 360',
             description:
-              'Projeto feito em grupo ao longo do Mestrado Profissional em Engenharia de Software da C.E.S.A.R School. O Avalia 360 é uma plataforma de avaliação em 360 graus, que permite a coleta de feedbacks de alunos de um projeto em equipe educacional',
+              'Projeto feito em grupo ao longo do Mestrado Profissional em Engenharia de Software da C.E.S.A.R School. O Avalia 360 é uma plataforma de avaliação em 360 graus, que permite a coleta de feedbacks de alunos de um projeto em equipe educacional.',
             tags: ['Django', 'Docker Compose', 'PostgreSQL'],
             projectLink: 'https://www.avalia360.com/',
             githubLink: 'https://github.com/academiceval/avalia360',
