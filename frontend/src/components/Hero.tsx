@@ -116,13 +116,17 @@ export const Hero = () => {
                   <MenuButton
                     as={Button}
                     rightIcon={<FaChevronDown />}
-                    colorScheme="whiteAlpha"
-                    variant="outline"
+                    bg="white"
+                    color="blue.700"
+                    _hover={{ bg: 'blue.50' }}
+                    _active={{ bg: 'blue.100' }}
+                    variant="solid"
                     size="sm"
+                    fontWeight="semibold"
                   >
                     {t('hero.downloadCv')}
                   </MenuButton>
-                  <MenuList color="gray.800">
+                  <MenuList color="gray.700">
                     {curriculumVersions.map((item) => (
                       <MenuItem
                         key={item.fileName}
@@ -146,10 +150,16 @@ export const Hero = () => {
                     download={item.available ? item.fileName : undefined}
                     target={item.available ? '_blank' : undefined}
                     rel={item.available ? 'noopener noreferrer' : undefined}
-                    colorScheme="whiteAlpha"
-                    variant="outline"
+                    bg="whiteAlpha.300"
+                    color="white"
+                    borderColor="whiteAlpha.600"
+                    border="1px solid"
+                    _hover={{ bg: 'whiteAlpha.400' }}
+                    variant="unstyled"
                     size="sm"
+                    px={4}
                     isDisabled={!item.available}
+                    opacity={!item.available ? 0.6 : 1}
                   >
                     {item.available ? t('hero.downloadThesis') : `${t('hero.downloadThesis')} (${t('hero.comingSoon')})`}
                   </Button>
