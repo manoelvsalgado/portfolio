@@ -13,6 +13,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
@@ -46,6 +47,10 @@ const downloads = [
 
 export const Hero = () => {
   const { t } = useTranslation();
+  const curriculumMenuBg = useColorModeValue('white', 'gray.800');
+  const curriculumMenuColor = useColorModeValue('gray.700', 'gray.100');
+  const curriculumMenuBorderColor = useColorModeValue('gray.200', 'gray.700');
+  const curriculumMenuItemHoverBg = useColorModeValue('blue.50', 'whiteAlpha.200');
 
   return (
     <Box
@@ -126,7 +131,7 @@ export const Hero = () => {
                   >
                     {t('hero.downloadCv')}
                   </MenuButton>
-                  <MenuList color="gray.700">
+                  <MenuList bg={curriculumMenuBg} color={curriculumMenuColor} borderColor={curriculumMenuBorderColor}>
                     {curriculumVersions.map((item) => (
                       <MenuItem
                         key={item.fileName}
@@ -135,6 +140,9 @@ export const Hero = () => {
                         download={item.fileName}
                         target="_blank"
                         rel="noopener noreferrer"
+                        color={curriculumMenuColor}
+                        _hover={{ bg: curriculumMenuItemHoverBg }}
+                        _focus={{ bg: curriculumMenuItemHoverBg }}
                       >
                         {item.label}
                       </MenuItem>
