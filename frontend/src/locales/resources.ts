@@ -268,11 +268,48 @@ export const resources = {
             githubLink: '',
           },
           {
+            title: 'Avalia 360',
+            description:
+              'Group project developed during the Professional Master’s in Software Engineering at C.E.S.A.R School. Avalia 360 is a 360-degree assessment platform that enables collecting feedback from students in educational team projects.',
+            tags: ['Django', 'Docker Compose', 'PostgreSQL'],
+            projectLink: 'https://www.avalia360.com/',
+            githubLink: 'https://github.com/academiceval/avalia360',
+          },
+          {
             title: 'Pet Services',
             description: 'Platform to connect pet owners and pet service providers. (under construction)',
             tags: ['React', 'TypeScript', 'Chakra UI'],
             projectLink: 'https://pet-services-azure.vercel.app/',
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
+          },
+          {
+            title: 'Data Salary Analysis',
+            description: 'Salary analysis in the data field.',
+            tags: ['React', 'TypeScript', 'Vite'],
+            projectLink: 'https://manoelvsalgado.github.io/data-salary-analysis/',
+            githubLink: 'https://github.com/manoelvsalgado/data-salary-analysis',
+          },
+          {
+            title: 'Weather Web App',
+            description:
+              'Weather forecast app connected to a weather API to provide real-time meteorological information.',
+            tags: ['React', 'TypeScript', 'Chakra UI'],
+            projectLink: 'https://manoelvsalgado.github.io/weather-web-app/',
+            githubLink: 'https://github.com/manoelvsalgado/weather-web-app',
+          },
+          {
+            title: 'RocketMovies',
+            description: 'Application to organize watched movies by rating, notes, and tags.',
+            tags: ['React', 'JavaScript', 'styled-components'],
+            projectLink: 'https://manoelvsalgado.github.io/rocketmovies/',
+            githubLink: 'https://github.com/manoelvsalgado/rocketmovies',
+          },
+          {
+            title: 'Focus Timer',
+            description: 'App for managing focus time and productivity, based on the Pomodoro method.',
+            tags: ['JavaScript', 'HTML', 'CSS'],
+            projectLink: 'https://manoelvsalgado.github.io/focustimer/',
+            githubLink: 'https://github.com/manoelvsalgado/focustimer',
           },
         ],
       },
@@ -302,7 +339,7 @@ export const resources = {
       header: {
         nav: {
           about: 'Sobre mí',
-          skills: 'Skills',
+          skills: 'Habilidades',
           projects: 'Proyectos',
           contact: 'Contacto',
         },
@@ -399,11 +436,48 @@ export const resources = {
             githubLink: '',
           },
           {
+            title: 'Avalia 360',
+            description:
+              'Proyecto grupal desarrollado durante la Maestría Profesional en Ingeniería de Software de C.E.S.A.R School. Avalia 360 es una plataforma de evaluación de 360 grados que permite recopilar feedback de estudiantes en proyectos educativos en equipo.',
+            tags: ['Django', 'Docker Compose', 'PostgreSQL'],
+            projectLink: 'https://www.avalia360.com/',
+            githubLink: 'https://github.com/academiceval/avalia360',
+          },
+          {
             title: 'Pet Services',
             description: 'Plataforma para conectar tutores y servicios para mascotas. (en construcción)',
             tags: ['React', 'TypeScript', 'Chakra UI'],
             projectLink: 'https://pet-services-azure.vercel.app/',
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
+          },
+          {
+            title: 'Data Salary Analysis',
+            description: 'Análisis de salarios en el área de datos.',
+            tags: ['React', 'TypeScript', 'Vite'],
+            projectLink: 'https://manoelvsalgado.github.io/data-salary-analysis/',
+            githubLink: 'https://github.com/manoelvsalgado/data-salary-analysis',
+          },
+          {
+            title: 'Weather Web App',
+            description:
+              'Aplicación del clima conectada a una API meteorológica para proporcionar información en tiempo real.',
+            tags: ['React', 'TypeScript', 'Chakra UI'],
+            projectLink: 'https://manoelvsalgado.github.io/weather-web-app/',
+            githubLink: 'https://github.com/manoelvsalgado/weather-web-app',
+          },
+          {
+            title: 'RocketMovies',
+            description: 'Aplicación para organizar películas vistas por evaluación, notas y etiquetas.',
+            tags: ['React', 'JavaScript', 'styled-components'],
+            projectLink: 'https://manoelvsalgado.github.io/rocketmovies/',
+            githubLink: 'https://github.com/manoelvsalgado/rocketmovies',
+          },
+          {
+            title: 'Focus Timer',
+            description: 'Aplicación para gestionar el tiempo de enfoque y la productividad, basada en el método Pomodoro.',
+            tags: ['JavaScript', 'HTML', 'CSS'],
+            projectLink: 'https://manoelvsalgado.github.io/focustimer/',
+            githubLink: 'https://github.com/manoelvsalgado/focustimer',
           },
         ],
       },
