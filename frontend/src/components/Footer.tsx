@@ -1,11 +1,12 @@
-import { Box, Container, Text, Stack } from '@chakra-ui/react';
+import { Box, Container, Text, Stack, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
   const { t } = useTranslation();
+  const footerBg = useColorModeValue('gray.800', 'gray.950');
 
   return (
-    <Box as="footer" bg="gray.800" color="white" py={8}>
+    <Box as="footer" bg={footerBg} color="white" py={8}>
       <Container maxW="container.xl">
         <Stack spacing={2} align="center">
           <Text fontSize="sm" color="gray.300" fontWeight="medium" textAlign="center">

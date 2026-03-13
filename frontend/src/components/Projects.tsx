@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Container, Heading, Stack, Text, Button, Tag, HStack, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, Heading, Stack, Text, Button, Tag, HStack, IconButton, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -21,6 +21,11 @@ export const Projects = () => {
   const itemsPerPage = useBreakpointValue({ base: 1, md: 2 }) ?? 1;
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(1);
+  const sectionBg = useColorModeValue('gray.50', 'gray.900');
+  const cardBg = useColorModeValue('white', 'gray.800');
+  const textColor = useColorModeValue('gray.600', 'gray.400');
+  const dotInactive = useColorModeValue('gray.300', 'gray.600');
+  const dotInactiveHover = useColorModeValue('gray.400', 'gray.500');
 
   const totalPages = Math.ceil(projects.length / itemsPerPage);
 
@@ -38,14 +43,14 @@ export const Projects = () => {
   };
 
   return (
-    <Box as="section" py={{ base: 14, md: 16 }} bg="gray.50" id="projetos">
+    <Box as="section" py={{ base: 14, md: 16 }} bg={sectionBg} id="projetos">
       <Container maxW="container.xl">
         <Stack spacing={10}>
           <Stack spacing={4} textAlign="center" maxW="2xl" mx="auto">
             <Heading as="h2" size="xl">
               {t('projects.title')}
             </Heading>
-            <Text fontSize="lg" color="gray.600">
+            <Text fontSize="lg" color={textColor}>
               {t('projects.intro')}
             </Text>
           </Stack>
@@ -86,7 +91,7 @@ export const Projects = () => {
                         key={project.title}
                         spacing={4}
                         p={6}
-                        bg="white"
+                        bg={cardBg}
                         borderRadius="lg"
                         boxShadow="md"
                         transition="all 0.3s"
@@ -95,7 +100,7 @@ export const Projects = () => {
                         <Heading as="h3" size="md" color="blue.600">
                           {project.title}
                         </Heading>
-                        <Text color="gray.600">
+                        <Text color={textColor}>
                           {project.description}
                         </Text>
                         <HStack spacing={2} flexWrap="wrap">
@@ -161,10 +166,10 @@ export const Projects = () => {
                     w={i === page ? 6 : 2.5}
                     h={2.5}
                     borderRadius="full"
-                    bg={i === page ? 'blue.500' : 'gray.300'}
+                    bg={i === page ? 'blue.500' : dotInactive}
                     transition="all 0.3s"
                     onClick={() => { setDirection(i > page ? 1 : -1); setPage(i); }}
-                    _hover={{ bg: i === page ? 'blue.500' : 'gray.400' }}
+                    _hover={{ bg: i === page ? 'blue.500' : dotInactiveHover }}
                   />
                 ))}
               </HStack>

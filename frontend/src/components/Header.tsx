@@ -1,12 +1,15 @@
-import { Box, Container, Flex, Heading, Button, HStack, IconButton, useDisclosure, Stack, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Menu, MenuButton, MenuList, MenuItem, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Button, HStack, IconButton, useDisclosure, Stack, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Menu, MenuButton, MenuList, MenuItem, Text, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { HiMenu } from 'react-icons/hi';
 import { MdLanguage } from 'react-icons/md';
-import { FiChevronDown, FiCheck } from 'react-icons/fi';
+import { FiChevronDown, FiCheck, FiMoon, FiSun } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const headerBg = useColorModeValue('white', 'gray.900');
+  const menuListBg = useColorModeValue('white', 'gray.800');
 
   const navItems = [
     { label: t('header.nav.about'), href: '#sobre' },
@@ -36,7 +39,7 @@ export const Header = () => {
       >
         <Text as="span" fontWeight="semibold">{currentLang.label}</Text>
       </MenuButton>
-      <MenuList minW="140px" shadow="md">
+      <MenuList minW="140px" shadow="md" bg={menuListBg}>
         {languages.map((language) => {
           const isActive = i18n.language.startsWith(language.code);
           return (
@@ -72,7 +75,7 @@ export const Header = () => {
       left={0} 
       right={0} 
       zIndex={1000}
-      bg="white"
+      bg={headerBg}
       boxShadow="sm"
     >
       <Container maxW="container.xl">
@@ -95,16 +98,33 @@ export const Header = () => {
             <Box pl={2}>
               <LanguageMenu />
             </Box>
+            <IconButton
+              aria-label="Toggle color mode"
+              icon={colorMode === 'dark' ? <FiSun /> : <FiMoon />}
+              onClick={toggleColorMode}
+              variant="ghost"
+              colorScheme="blue"
+              size="sm"
+            />
           </HStack>
 
           {/* Mobile Menu Button */}
-          <IconButton
-            display={{ base: 'flex', md: 'none' }}
-            onClick={onOpen}
-            icon={<HiMenu />}
-            variant="ghost"
-            aria-label={t('header.openMenu')}
-          />
+          <HStack display={{ base: 'flex', md: 'none' }} spacing={1}>
+            <IconButton
+              aria-label="Toggle color mode"
+              icon={colorMode === 'dark' ? <FiSun /> : <FiMoon />}
+              onClick={toggleColorMode}
+              variant="ghost"
+              colorScheme="blue"
+              size="sm"
+            />
+            <IconButton
+              onClick={onOpen}
+              icon={<HiMenu />}
+              variant="ghost"
+              aria-label={t('header.openMenu')}
+            />
+          </HStack>
         </Flex>
       </Container>
 

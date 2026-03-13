@@ -1,4 +1,4 @@
-import { Box, Container, Heading, SimpleGrid, Stack, Tag, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid, Stack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
 type SkillGroup = {
@@ -10,6 +10,8 @@ type SkillGroup = {
 export const Skills = () => {
   const { t } = useTranslation();
   const skills = t('skills.groups', { returnObjects: true }) as SkillGroup[];
+  const cardBg = useColorModeValue('white', 'gray.800');
+  const textColor = useColorModeValue('gray.600', 'gray.400');
 
   return (
     <Box as="section" py={{ base: 14, md: 16 }} id="skills">
@@ -19,7 +21,7 @@ export const Skills = () => {
             <Heading as="h2" size="xl">
               {t('skills.title')}
             </Heading>
-            <Text fontSize="lg" color="gray.600">
+            <Text fontSize="lg" color={textColor}>
               {t('skills.intro')}
             </Text>
           </Stack>
@@ -30,7 +32,7 @@ export const Skills = () => {
                 key={skillGroup.category}
                 spacing={4}
                 p={6}
-                bg="white"
+                bg={cardBg}
                 borderRadius="lg"
                 boxShadow="md"
                 transition="transform 0.2s"
@@ -39,7 +41,7 @@ export const Skills = () => {
                 <Heading as="h3" size="md" color="blue.600">
                   {skillGroup.category}
                 </Heading>
-                <Text color="gray.600" fontSize="sm" lineHeight="1.6">
+                <Text color={textColor} fontSize="sm" lineHeight="1.6">
                   {skillGroup.description}
                 </Text>
                 <Stack spacing={2}>

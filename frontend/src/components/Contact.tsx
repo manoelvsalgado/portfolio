@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, Stack, Button, SimpleGrid, useToast } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Stack, Button, SimpleGrid, useToast, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 
 type ContactCardProps = {
@@ -9,11 +9,14 @@ type ContactCardProps = {
   onCardClick?: () => void;
 };
 
-const ContactCard = ({ icon, title, value, link, onCardClick }: ContactCardProps) => (
+const ContactCard = ({ icon, title, value, link, onCardClick }: ContactCardProps) => {
+  const cardBg = useColorModeValue('white', 'gray.800');
+  const titleColor = useColorModeValue('gray.700', 'gray.300');
+  return (
   <Stack
     spacing={3}
     p={6}
-    bg="white"
+    bg={cardBg}
     borderRadius="lg"
     boxShadow="md"
     textAlign="center"
@@ -21,7 +24,7 @@ const ContactCard = ({ icon, title, value, link, onCardClick }: ContactCardProps
     _hover={{ transform: 'translateY(-4px)', boxShadow: 'lg' }}
   >
     <Text fontSize="3xl">{icon}</Text>
-    <Heading as="h3" size="sm" color="gray.700">
+    <Heading as="h3" size="sm" color={titleColor}>
       {title}
     </Heading>
     {link ? (
@@ -59,11 +62,13 @@ const ContactCard = ({ icon, title, value, link, onCardClick }: ContactCardProps
       </Text>
     )}
   </Stack>
-);
+  );
+};
 
 export const Contact = () => {
   const { t } = useTranslation();
   const toast = useToast();
+  const textColor = useColorModeValue('gray.600', 'gray.400');
 
   const copyEmail = async () => {
     try {
@@ -94,7 +99,7 @@ export const Contact = () => {
             <Heading as="h2" size="xl">
               {t('contact.title')}
             </Heading>
-            <Text fontSize="lg" color="gray.600" maxW="2xl" mx="auto">
+            <Text fontSize="lg" color={textColor} maxW="2xl" mx="auto">
               {t('contact.intro')}
             </Text>
           </Stack>
