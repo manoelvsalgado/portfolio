@@ -116,6 +116,13 @@ export const resources = {
             githubLink: 'https://github.com/GuilhermeDeOliveiraAmorim/pet-services',
           },
           {
+            title: 'Client Review Analysis  ',
+            description: 'Análise de comentários de clientes.',
+            tags: ['Python', 'LLM', 'Streamlit'],
+            projectLink: 'https://github.com/manoelvsalgado/client_reviews_analysis',
+            githubLink: 'https://clientreviewsanalysis.streamlit.app/',
+          },
+          {
             title: 'Data Salary Analysis  ',
             description: 'Análise de salários das área de dados.',
             tags: ['React', 'TypeScript', 'Vite'],
