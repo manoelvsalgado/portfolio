@@ -119,8 +119,8 @@ export const resources = {
             title: 'Client Review Analysis  ',
             description: 'Análise de comentários de clientes.',
             tags: ['Python', 'LLM', 'Streamlit'],
-            projectLink: 'https://github.com/manoelvsalgado/client_reviews_analysis',
-            githubLink: 'https://clientreviewsanalysis.streamlit.app/',
+            projectLink: 'https://clientreviewsanalysis.streamlit.app/',
+            githubLink: 'https://github.com/manoelvsalgado/client_reviews_analysis',
           },
           {
             title: 'Data Salary Analysis  ',
