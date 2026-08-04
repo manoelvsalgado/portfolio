@@ -21,36 +21,61 @@ import { useTranslation } from 'react-i18next';
 const curriculumVersions = [
   {
     label: 'Português',
-    href: `${import.meta.env.BASE_URL}docs/curriculo-manoel-salgado-pt.pdf`,
-    fileName: 'curriculo-manoel-salgado-pt.pdf',
+    href: `${import.meta.env.BASE_URL}docs/cvs/CV - Manoel Salgado (PT) - 030626.pdf`,
+    fileName: 'CV - Manoel Salgado (PT) - 030626.pdf',
   },
   {
     label: 'English',
-    href: `${import.meta.env.BASE_URL}docs/curriculo-manoel-salgado-en.pdf`,
-    fileName: 'curriculo-manoel-salgado-en.pdf',
-  },
-  {
-    label: 'Español',
-    href: `${import.meta.env.BASE_URL}docs/curriculo-manoel-salgado-es.pdf`,
-    fileName: 'curriculo-manoel-salgado-es.pdf',
+    href: `${import.meta.env.BASE_URL}docs/cvs/CV - Manoel Salgado (EN) - 030626.pdf`,
+    fileName: 'CV - Manoel Salgado (EN) - 030626.pdf',
   },
 ];
 
-const downloads = [
+type DownloadItem = {
+  labelKey: string;
+  href: string;
+  fileName: string;
+};
+
+const downloads: DownloadItem[] = [
   {
-    label: 'Baixar Dissertação',
-    href: `${import.meta.env.BASE_URL}docs/dissertacao-mestrado-manoel-salgado.pdf`,
-    fileName: 'dissertacao-mestrado-manoel-salgado.pdf',
-    available: false,
+    labelKey: 'hero.downloadDissertation',
+    title: 'Dissertação de Mestrado (Manoel Salgado)',
+    href: `${import.meta.env.BASE_URL}docs/dissertation/Dissertação de Mestrado (Manoel Salgado).pdf`,
+    fileName: 'Dissertação de Mestrado (Manoel Salgado).pdf',
+  },
+  {
+    labelKey: 'hero.downloadArticle',
+    title: 'Human–AI Collaboration in Requirements Elicitation: An Empirical Study',
+    href: `${import.meta.env.BASE_URL}docs/articles/Human–AI Collaboration in Requirements Elicitation: An Empirical Study.pdf`,
+    fileName: 'Human–AI Collaboration in Requirements Elicitation: An Empirical Study.pdf',
   },
 ];
 
 export const Hero = () => {
   const { t } = useTranslation();
-  const curriculumMenuBg = useColorModeValue('white', 'gray.800');
-  const curriculumMenuColor = useColorModeValue('gray.700', 'gray.100');
-  const curriculumMenuBorderColor = useColorModeValue('gray.200', 'gray.700');
-  const curriculumMenuItemHoverBg = useColorModeValue('blue.50', 'whiteAlpha.200');
+  const menuBg = useColorModeValue('white', 'gray.800');
+  const menuColor = useColorModeValue('gray.700', 'gray.100');
+  const menuBorderColor = useColorModeValue('gray.200', 'gray.700');
+  const menuItemHoverBg = useColorModeValue('blue.50', 'whiteAlpha.200');
+  const buttonBg = useColorModeValue('white', 'whiteAlpha.100');
+  const buttonColor = useColorModeValue('blue.700', 'white');
+  const buttonHoverBg = useColorModeValue('blue.50', 'whiteAlpha.200');
+  const buttonBorderColor = useColorModeValue('gray.200', 'gray.700');
+
+  const handleDownload = (item: DownloadItem) => {
+    const confirmed = window.confirm(t('hero.confirmDownload', { name: item.fileName }));
+    if (!confirmed) return;
+
+    const link = document.createElement('a');
+    link.href = item.href;
+    link.download = item.fileName;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box
@@ -121,28 +146,28 @@ export const Hero = () => {
                   <MenuButton
                     as={Button}
                     rightIcon={<FaChevronDown />}
-                    bg="white"
-                    color="blue.700"
-                    _hover={{ bg: 'blue.50' }}
+                    bg={buttonBg}
+                    color={buttonColor}
+                    _hover={{ bg: buttonHoverBg }}
                     _active={{ bg: 'blue.100' }}
                     variant="solid"
                     size="sm"
                     fontWeight="semibold"
+                    border="1px solid"
+                    borderColor={buttonBorderColor}
+                    px={4}
                   >
                     {t('hero.downloadCv')}
                   </MenuButton>
-                  <MenuList bg={curriculumMenuBg} color={curriculumMenuColor} borderColor={curriculumMenuBorderColor}>
+                  <MenuList bg={menuBg} color={menuColor} borderColor={menuBorderColor}>
                     {curriculumVersions.map((item) => (
                       <MenuItem
                         key={item.fileName}
-                        as="a"
-                        href={item.href}
-                        download={item.fileName}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        color={curriculumMenuColor}
-                        _hover={{ bg: curriculumMenuItemHoverBg }}
-                        _focus={{ bg: curriculumMenuItemHoverBg }}
+                        as="button"
+                        onClick={() => handleDownload(item)}
+                        color={menuColor}
+                        _hover={{ bg: menuItemHoverBg }}
+                        _focus={{ bg: menuItemHoverBg }}
                       >
                         {item.label}
                       </MenuItem>
@@ -151,26 +176,34 @@ export const Hero = () => {
                 </Menu>
 
                 {downloads.map((item) => (
-                  <Button
-                    key={item.fileName}
-                    as={item.available ? 'a' : undefined}
-                    href={item.available ? item.href : undefined}
-                    download={item.available ? item.fileName : undefined}
-                    target={item.available ? '_blank' : undefined}
-                    rel={item.available ? 'noopener noreferrer' : undefined}
-                    bg="whiteAlpha.300"
-                    color="white"
-                    borderColor="whiteAlpha.600"
-                    border="1px solid"
-                    _hover={{ bg: 'whiteAlpha.400' }}
-                    variant="unstyled"
-                    size="sm"
-                    px={4}
-                    isDisabled={!item.available}
-                    opacity={!item.available ? 0.6 : 1}
-                  >
-                    {item.available ? t('hero.downloadThesis') : `${t('hero.downloadThesis')} (${t('hero.comingSoon')})`}
-                  </Button>
+                  <Menu key={item.fileName}>
+                    <MenuButton
+                      as={Button}
+                      rightIcon={<FaChevronDown />}
+                      bg={buttonBg}
+                      color={buttonColor}
+                      border="1px solid"
+                      borderColor={buttonBorderColor}
+                      _hover={{ bg: buttonHoverBg }}
+                      variant="solid"
+                      size="sm"
+                      px={4}
+                      fontWeight="semibold"
+                    >
+                      {t(item.labelKey)}
+                    </MenuButton>
+                    <MenuList bg={menuBg} color={menuColor} borderColor={menuBorderColor}>
+                      <MenuItem
+                        as="button"
+                        onClick={() => handleDownload(item)}
+                        color={menuColor}
+                        _hover={{ bg: menuItemHoverBg }}
+                        _focus={{ bg: menuItemHoverBg }}
+                      >
+                        {item.title}
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
                 ))}
               </HStack>
             </VStack>

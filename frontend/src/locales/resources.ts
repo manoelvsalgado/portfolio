@@ -17,8 +17,10 @@ export const resources = {
         role: 'Desenvolvedor Front-end',
         summary:
           'Mestrando em Engenharia de Software pela C.E.S.A.R School, tecnólogo em Análise e Desenvolvimento de Sistemas pelo SENAC e bacharel em Ciência Política com ênfase em Relações Internacionais pela UFPE. Nativo de português e fluente em inglês e espanhol.',
-        downloadCv: 'Baixar Currículo',
-        downloadThesis: 'Baixar Dissertação',
+        downloadCv: 'Currículo',
+        downloadDissertation: 'Dissertação',
+        downloadArticle: 'Artigo',
+        confirmDownload: 'Deseja baixar {{name}}?',
         comingSoon: 'em breve',
       },
       about: {
@@ -158,6 +160,7 @@ export const resources = {
         email: 'Email',
         linkedin: 'LinkedIn',
         github: 'GitHub',
+        lattes: 'Lattes',
         allura: 'Alura',
         copied: 'E-mail copiado!',
         copyFailed: 'Não foi possível copiar o e-mail.',
@@ -191,8 +194,10 @@ export const resources = {
         role: 'Front-end Developer',
         summary:
           'Master’s student in Software Engineering at C.E.S.A.R School, Systems Analysis and Development graduate from SENAC, and Political Science bachelor with emphasis on International Relations from UFPE. Native Portuguese speaker and fluent in English and Spanish.',
-        downloadCv: 'Download Resume',
-        downloadThesis: 'Download Thesis',
+        downloadCv: 'Resume',
+        downloadDissertation: 'Dissertation',
+        downloadArticle: 'Article',
+        confirmDownload: 'Do you want to download {{name}}?',
         comingSoon: 'coming soon',
       },
       about: {
@@ -326,6 +331,7 @@ export const resources = {
         email: 'Email',
         linkedin: 'LinkedIn',
         github: 'GitHub',
+        lattes: 'Lattes',
         allura: 'Alura',
         copied: 'Email copied!',
         copyFailed: 'Could not copy the email.',
@@ -359,8 +365,10 @@ export const resources = {
         role: 'Desarrollador Front-end',
         summary:
           'Estudiante de maestría en Ingeniería de Software en C.E.S.A.R School, tecnólogo en Análisis y Desarrollo de Sistemas por SENAC y licenciado en Ciencia Política con énfasis en Relaciones Internacionales por la UFPE. Portugués nativo y fluido en inglés y español.',
-        downloadCv: 'Descargar Currículum',
-        downloadThesis: 'Descargar Disertación',
+        downloadCv: 'Currículum',
+        downloadDissertation: 'Disertación',
+        downloadArticle: 'Artículo',
+        confirmDownload: '¿Desea descargar {{name}}?',
         comingSoon: 'próximamente',
       },
       about: {
@@ -494,6 +502,7 @@ export const resources = {
         email: 'Email',
         linkedin: 'LinkedIn',
         github: 'GitHub',
+        lattes: 'Lattes',
         allura: 'Alura',
         copied: '¡Correo copiado!',
         copyFailed: 'No fue posible copiar el correo.',

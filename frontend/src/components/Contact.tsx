@@ -124,6 +124,12 @@ export const Contact = () => {
               link="https://github.com/manoelvsalgado"
             />
             <ContactCard
+              icon="👨‍🎓"
+              title={t('contact.lattes')}
+              value="Manoel Vieira Salgado Neto"
+              link="http://lattes.cnpq.br/3971516612351183"
+            />
+            <ContactCard
               icon="👨‍🏫"
               title={t('contact.allura')}
               value="manoelsalgadoneto"
