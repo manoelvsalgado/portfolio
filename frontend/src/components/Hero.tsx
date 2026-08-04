@@ -67,7 +67,7 @@ export const Hero = () => {
   const buttonHoverBg = useColorModeValue('blue.50', 'whiteAlpha.200');
   const buttonBorderColor = useColorModeValue('gray.200', 'gray.700');
 
-  const handleDownload = (item: DownloadItem) => {
+  const handleDownload = (item: Downloadable) => {
     const confirmed = window.confirm(t('hero.confirmDownload', { name: item.fileName }));
     if (!confirmed) return;
 
