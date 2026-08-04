@@ -31,10 +31,14 @@ const curriculumVersions = [
   },
 ];
 
-type DownloadItem = {
-  labelKey: string;
+type Downloadable = {
   href: string;
   fileName: string;
+};
+
+type DownloadItem = Downloadable & {
+  labelKey: string;
+  title: string;
 };
 
 const downloads: DownloadItem[] = [
