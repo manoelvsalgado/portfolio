@@ -9,40 +9,83 @@ API REST desenvolvida com FastAPI para o site portfolio.
 - Uvicorn
 - Pydantic
 
-## 💻 Desenvolvimento Local
+## 💻 Executar localmente
 
-### Criar ambiente virtual e instalar dependências
+No terminal:
 
 ```bash
-# Criar ambiente virtual
-python -m venv venv
-
-# Ativar ambiente virtual
-# Linux/Mac:
-source venv/bin/activate
+cd backend
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
 # Windows:
-venv\Scripts\activate
-
-# Instalar dependências
+# venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-### Executar servidor de desenvolvimento
-
-```bash
-# Modo desenvolvimento (com auto-reload)
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
-
-# Ou simplesmente
-python main.py
 ```
 
 A API estará disponível em:
-- API: `http://localhost:8000`
-- Documentação interativa (Swagger): `http://localhost:8000/docs`
-- Documentação alternativa (ReDoc): `http://localhost:8000/redoc`
+- `http://localhost:8000`
+- `http://localhost:8000/docs` (Swagger)
+- `http://localhost:8000/redoc` (ReDoc)
+
+### Alternativa com Makefile
+
+```bash
+make backend-install
+make backend-dev
+```
 
 ## 📚 Endpoints
+
+### GET /
+Retorna uma mensagem de status e os principais endpoints.
+
+### GET /projects
+Lista todos os projetos.
+
+### GET /projects/{project_id}
+Retorna um projeto específico.
+
+### POST /contact
+Recebe mensagem de contato:
+
+```json
+{
+  "name": "João Silva",
+  "email": "joao@email.com",
+  "subject": "Proposta de projeto",
+  "message": "Olá, gostaria de conversar sobre..."
+}
+```
+
+### GET /health
+Health check da API.
+
+## 🌍 CORS
+
+O backend já permite requisições do frontend local (`http://localhost:5173`) e de domínios estáticos configurados para deploy.
+
+## 🚀 Deploy
+
+### Opções recomendadas
+
+- Render
+- Railway
+- Fly.io
+- PythonAnywhere
+
+### Exemplo Render
+
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+## 📝 Observações
+
+O endpoint `POST /contact` está preparado para receber mensagens, mas ainda precisa de implementação de envio de email ou persistência em produção.
+
+## 📝 Licença
+
+MIT
 
 ### GET /
 Informações básicas da API

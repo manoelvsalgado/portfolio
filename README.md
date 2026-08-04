@@ -89,6 +89,12 @@ npm run dev
 
 Acesse: `http://localhost:5173`
 
+### Alternativa com Makefile
+```bash
+make frontend-install
+make frontend-dev
+```
+
 ### Deploy:
 O deploy no GitHub Pages é automático via GitHub Actions. Veja `frontend/README.md` para detalhes.
 
@@ -110,16 +116,23 @@ API REST completa para portfolio com endpoints de projetos e contato.
 ### Executar localmente:
 ```bash
 cd backend
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
 # ou venv\Scripts\activate (Windows)
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 Acesse:
 - API: `http://localhost:8000`
 - Docs: `http://localhost:8000/docs`
+- ReDoc: `http://localhost:8000/redoc`
+
+### Alternativa com Makefile
+```bash
+make backend-install
+make backend-dev
+```
 
 ### Hospedagem Recomendada:
 - **Render**: deploy gratuito via GitHub
