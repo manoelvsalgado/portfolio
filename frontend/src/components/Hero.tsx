@@ -18,15 +18,18 @@ import {
 import { FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
+const encodePath = (...parts: string[]) =>
+  `${import.meta.env.BASE_URL}docs/${parts.map((p) => encodeURIComponent(p)).join('/')}`;
+
 const curriculumVersions = [
   {
     label: 'Português',
-    href: `${import.meta.env.BASE_URL}docs/cvs/CV - Manoel Salgado (PT) - 030626.pdf`,
+    href: encodePath('cvs', 'CV - Manoel Salgado (PT) - 030626.pdf'),
     fileName: 'CV - Manoel Salgado (PT) - 030626.pdf',
   },
   {
     label: 'English',
-    href: `${import.meta.env.BASE_URL}docs/cvs/CV - Manoel Salgado (EN) - 030626.pdf`,
+    href: encodePath('cvs', 'CV - Manoel Salgado (EN) - 030626.pdf'),
     fileName: 'CV - Manoel Salgado (EN) - 030626.pdf',
   },
 ];
@@ -45,14 +48,26 @@ const downloads: DownloadItem[] = [
   {
     labelKey: 'hero.downloadDissertation',
     title: 'Dissertação de Mestrado (Manoel Salgado)',
-    href: `${import.meta.env.BASE_URL}docs/dissertation/Dissertação de Mestrado (Manoel Salgado).pdf`,
+    href: encodePath('dissertation', 'Dissertação de Mestrado (Manoel Salgado).pdf'),
     fileName: 'Dissertação de Mestrado (Manoel Salgado).pdf',
   },
   {
     labelKey: 'hero.downloadArticle',
-    title: 'Human–AI Collaboration in Requirements Elicitation: An Empirical Study',
-    href: `${import.meta.env.BASE_URL}docs/articles/Human–AI Collaboration in Requirements Elicitation: An Empirical Study.pdf`,
-    fileName: 'Human–AI Collaboration in Requirements Elicitation: An Empirical Study.pdf',
+    title: 'Collaborative and AI-Supported Requirements Elicitation: An Empirical Study',
+    href: encodePath('articles', 'Collaborative and AI-Supported Requirements Elicitation: An Empirical Study.pdf'),
+    fileName: 'Collaborative and AI-Supported Requirements Elicitation: An Empirical Study.pdf',
+  },
+  {
+    labelKey: 'hero.downloadConference',
+    title: "HCARE 26 - Human–AI Collaboration in RE (conference paper)",
+    href: encodePath("2026 ieee re conference", "HCARE 26' - #21 Human–AI Collaboration in RE.pdf"),
+    fileName: "HCARE 26' - #21 Human–AI Collaboration in RE.pdf",
+  },
+  {
+    labelKey: 'hero.downloadDefense',
+    title: 'Defesa de Dissertação - Apresentação (pptx)',
+    href: encodePath('dissertation defense', 'Defesa de Dissertação - Manoel Salgado (2026).pptx'),
+    fileName: 'Defesa de Dissertação - Manoel Salgado (2026).pptx',
   },
 ];
 
