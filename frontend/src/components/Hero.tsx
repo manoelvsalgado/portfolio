@@ -100,14 +100,22 @@ export const Hero = () => {
     <Box
       as="section"
       id="inicio"
+      role="region"
+      aria-label="Hero section with conference background"
+      position="relative"
       minH="50vh"
       display="flex"
       alignItems="center"
-      bgGradient="linear(to-br, blue.500, purple.600)"
+      bgImage={`url(${import.meta.env.BASE_URL}conference.jpeg)`}
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
       color="white"
       py={{ base: 12, md: 14 }}
     >
-      <Container maxW="container.xl">
+      {/* overlay to ensure text contrast over the background image */}
+      <Box position="absolute" inset={0} bgGradient="linear(to-br, rgba(2,6,23,0.6), rgba(88,28,135,0.55))" zIndex={0} />
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         <Flex
           direction={{ base: 'column', lg: 'row' }}
           align="center"
