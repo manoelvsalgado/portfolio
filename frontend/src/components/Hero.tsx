@@ -52,6 +52,12 @@ const downloads: DownloadItem[] = [
     fileName: 'Dissertação de Mestrado (Manoel Salgado).pdf',
   },
   {
+    labelKey: 'hero.downloadDefense',
+    title: 'Defesa de Dissertação - Apresentação (pptx)',
+    href: encodePath('dissertation defense', 'Defesa de Dissertação - Manoel Salgado (2026).pptx'),
+    fileName: 'Defesa de Dissertação - Manoel Salgado (2026).pptx',
+  },
+  {
     labelKey: 'hero.downloadArticle',
     title: 'Collaborative and AI-Supported Requirements Elicitation: An Empirical Study',
     href: encodePath('articles', 'Collaborative and AI-Supported Requirements Elicitation: An Empirical Study.pdf'),
@@ -62,12 +68,6 @@ const downloads: DownloadItem[] = [
     title: "HCARE 26 - Human–AI Collaboration in RE (conference paper)",
     href: encodePath("2026 ieee re conference", "HCARE 26' - #21 Human–AI Collaboration in RE.pdf"),
     fileName: "HCARE 26' - #21 Human–AI Collaboration in RE.pdf",
-  },
-  {
-    labelKey: 'hero.downloadDefense',
-    title: 'Defesa de Dissertação - Apresentação (pptx)',
-    href: encodePath('dissertation defense', 'Defesa de Dissertação - Manoel Salgado (2026).pptx'),
-    fileName: 'Defesa de Dissertação - Manoel Salgado (2026).pptx',
   },
 ];
 
